@@ -8,22 +8,66 @@
     <link type="text/css" href="./styles.css" rel="stylesheet"/>
     <!-- OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
     <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+    <style>
+.row > .column {
+  padding: 0 8px;
+  height:55%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  padding: 0 10px;
+  height:25%;
+}
+
+.column {
+  float: left;
+  padding-left:2vw;
+  width:50%;
+  margin-bottom: 20px;
+  margin-left:5px;
+}
+
+    </style>
   </head>
-  <body>
-    <!-- <model-viewer> HTML element -->
-    <model-viewer src="logo11.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1" autoplay>
-      <div class="progress-bar hide" slot="progress-bar">
-          <div class="update-bar"></div>
-      </div>
-      <button slot="ar-button" id="ar-button">
-          View in your space
-      </button>
-      <div id="ar-prompt">
-          <img src="ar_hand_prompt.png">
-      </div>
-    </model-viewer>  
+  <body style="width:100vw;">
+
+     <div class="row">
+      <div class="column">
+
+        <div style="position:relative;z-index:2;width:80vw;margin-left:10vw;;">
+<!-- <model-viewer> HTML element -->
+<model-viewer src="logo11.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" autoplay camera-target="1.16m -0.1434m 0.2m" shadow-intensity="1" autoplay style="width:50vw; height:50vh; position:absolute;">
+<div class="progress-bar hide" slot="progress-bar">
+<div class="update-bar"></div>
+</div>
+</model-viewer>  
+  </div>
+</div>
+<div class="column">
+    <div style="margin-left:40vw; width:45vw; position:absolute;text-align: center;margin-top:5vh;z-index:3;">
+      <p style="text-align:center; font-size:3vw;line-height: 0.1vw;">ADA Northern Branch</p>
+<p style="font-size:3vw; line-height: 0.1vw;">Social Meeting</p>
+    <p style="font-size:2vw;line-height:1vh;">Wed 5th Oct - 7.30-8pm</p>
+    <p style="font-size:2vw;line-height:2vh;">Longford Show Grounds<br>Bulwer St entry</p>
+    
+    <p style="font-size:2.5vw; line-height: 0.1vw;">Theme:<br> </p> 
+<p style="font-size:3vw; line-height: 0.1vw;color:red;">SportsHut</p>
+
+    
+    <p style="font-size:2.5vw; line-height: 0.2vw;"> presents on </p>
+    <p style="font-style:italic; font-size: 2.5vw;line-height: 0.2vw;">'New Texhnologies in Hunting'</p>
+    <a href="https://sportshut.com.au/?fbclid=IwAR2e-XjHmBVgfKB8uQ_whZNBJ5wI64A1N9HWsVFG9-39fxhiXP8Hrd0ckzI"><img src="ss.png" style="width:5vw;"></a> 
+    <a href="https://sportshut.com.au/?fbclid=IwAR2e-XjHmBVgfKB8uQ_whZNBJ5wI64A1N9HWsVFG9-39fxhiXP8Hrd0ckzI"><img src="sportshut.png" style="width:15vw;"></a> 
+    <img src="alg.png" style="width:15vw;">
+    </div>
+  </div>
+</div>
     <script src="script.js"></script>
     <!-- Loads <model-viewer> for browsers: -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    
   </body>
 </html>
